@@ -1,0 +1,68 @@
+@import '../../theme';
+
+@mixin table-bordered () {
+    &[ui-table--style="bordered"] {
+        td, th {
+            padding: $default-padding;
+            border: 1px solid $default-border-color;
+        }
+    }
+}
+
+@mixin table-striped () {
+    &[ui-table--style="striped"] {
+        tr {
+            &:nth-child(odd) {
+                background-color: #ffffff;
+            }
+        }
+        tr {
+            &:nth-child(even) {
+                background-color: #fafafa;
+            }
+        }
+    }      
+}
+
+@mixin table-hoverable () {
+    &[ui-table--style="hoverable"] {
+        tr {
+            &:hover {
+                background-color: #fafafa;
+            }
+        }
+    }     
+}
+
+[ui-table] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: $default-margin * 4;
+
+    td, th {
+        text-align: left;
+        padding: $default-padding 0;
+        border-bottom: 1px solid $default-border-color;
+    }
+
+    [ui-table-action] {
+        text-align: right;
+
+        [ui-btn] {
+            &+ [ui-btn] {
+                margin-left: $default-margin;
+            }
+        }
+    }
+
+    [ui-table-feedback] {
+        text-align: center;
+        padding: $default-padding * 2;
+        color: lighten($base-text-color, 20%);
+    }
+
+    // Modifiers 
+    @include table-bordered();    //@if-use-mod:ui-table--style-bordered
+    @include table-striped();     //@if-use-mod:ui-table--style-striped
+    @include table-hoverable();   //@if-use-mod:ui-table--style-hoverable
+}

@@ -1,0 +1,3 @@
+Layout('auth', {
+    template: '@'
+});

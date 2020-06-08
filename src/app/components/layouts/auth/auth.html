@@ -1,0 +1,23 @@
+<div ui-layout-auth>
+    <div content-auth web>
+        <h1>
+            <img src="../images/protein_now.svg" alt="Protein Now">
+        </h1>
+        <div content>
+            <slot name="content"></slot>
+        </div>
+    </div>
+    <div banner-auth>
+        <slot name="banner">
+            <div content-banner-auth>
+                <h3>Receba se quando quiser em qualquer lugar</h3>
+                <h4>Entre na sua conta e aproveite as melhores ofertas</h4>
+            </div>
+        </slot>
+    </div>
+    <div content-auth mobile>
+        <div content>
+            <slot name="content"></slot>
+        </div>
+    </div>
+</div>

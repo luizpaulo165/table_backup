@@ -1,0 +1,3 @@
+Page('home', {
+    template: '@'
+});

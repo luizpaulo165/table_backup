@@ -1,0 +1,55 @@
+// Grid settings
+$columns: 12;
+$gutter: 8px;
+
+// Spacing and Rounding
+$default-margin: 8px;
+$default-padding: 8px;
+$default-border-radius: 4px;
+
+// Text
+$base-text-color: #666;
+$base-font-family: 'proxima_novaregular';
+$base-font-size: 1rem;
+
+// Colors
+$color-default:        #FFFFFF;
+$color-primary:        #3273dc;
+$color-info:           #3298dc;
+$color-danger:         #f14668;
+$color-success:        #48c774;
+$color-warning:        #ffdd57;
+$default-background:   #efefef;
+$default-border-color: #dbdbdb;
+
+// Buttons
+$btn-default-height: 2.5em;
+$btn-default-line-height: 1.5;
+$btn-hover-darken:   5%;
+$btn-hover-lighten:  5%;
+$btn-sm-multiplier:  (-.25);
+$btn-md-multiplier:  .25;
+$btn-lg-multiplier:  .5;
+
+// Spinner
+$spinner-border-size: 4px;
+$spinner-border-active-color: darken(#E6E6E6, 15%);
+$spinner-border-inactive-color: #E6E6E6;
+
+// Layout settings:
+
+// -- Admin:
+
+$admin-layout-nav-background: #666;
+$admin-layout-nav-color: #fff;
+$admin-layout-nav-hover-background: $default-background;
+
+$admin-layout-sidebar-background: #666;
+$admin-layout-sidebar-width: 200px;
+$admin-layout-sidebar-width-collapsed: 60px;
+$admin-layout-default-background: $default-background;
+
+// -- Auth:
+$auth-layout-default-background: $default-background;
+$auth-layout-box-background: #FFFFFF;
+$auth-layout-box-text-color: $base-text-color;

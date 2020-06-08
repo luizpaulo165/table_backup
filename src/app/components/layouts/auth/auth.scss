@@ -1,0 +1,106 @@
+@import '../../../theme';
+@import '../../../utils';
+
+[ui-layout-auth] {
+    height:100vh;
+    min-height:724px;
+    display:flex;
+    flex-direction:row;
+    
+    @include mq('md'){
+        flex-direction: row;
+    }
+    @include mq('sm'){
+        flex-direction: column;
+    }
+    @include mq('xs'){
+        flex-direction: column;
+    }
+
+    [content-auth]{
+        width:45vw;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding:60px;
+        box-sizing: border-box;
+
+        &[web]{
+            @include mq('md'){
+                width:50vw;
+            }
+            @include mq('sm'){
+                display:none;
+            }
+            @include mq('xs'){
+                display:none;
+            }
+        }
+
+        &[mobile]{
+            display:none!important;
+
+            @include mq('sm'){
+                width:100vw;
+                display:flex;
+                flex-direction:column;
+            }
+            @include mq('xs'){
+                width:100vw;
+                display:flex;
+                flex-direction:column;
+            }
+        }
+
+        h1{
+            margin-bottom:80px;
+        }
+
+        [content]{
+            max-width:446px;
+            min-height:530px;
+            margin:0 auto;
+        }
+    }
+    [banner-auth]{
+        background-image:url('../images/auth/banner.jpg');
+        background-position:top left;
+        background-repeat: no-repeat;
+        background-size:cover;
+        width:55vw;
+        display:flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding:60px;
+        box-sizing: border-box;
+
+        @include mq('md'){
+            width:50vw;
+        }
+        @include mq('sm'){
+            background-image:url('../images/auth/banner_mobile.jpg');
+            background-position:top right;
+            width:100vw;
+            height:338px;
+        }
+        @include mq('xs'){
+            background-image:url('../images/auth/banner_mobile.jpg');
+            background-position:top right;
+            width:100vw;
+            height:338px;
+        }
+
+        h3{
+            font-family:'proxima_novabold';
+            font-size: 45px;
+            line-height: 55px;
+            color: #FFFFFF;
+            margin-bottom:20px;
+        }
+        h4{
+            font-size: 25px;
+            line-height: 30px;
+            color: #FFFFFF;
+            width:70%;
+        }
+    }
+}

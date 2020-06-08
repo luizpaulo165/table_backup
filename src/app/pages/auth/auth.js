@@ -1,0 +1,3 @@
+Page('auth-page', {
+    template: '@'
+});

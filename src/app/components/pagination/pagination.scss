@@ -1,0 +1,73 @@
+@import '../../theme';
+
+@mixin pagination-rounded () {
+    &[ui-pagination--style="rounded"] {
+        ul {
+            li {
+                [ui-pagination-number] {
+                    border-radius: 290486px;
+                }
+            }
+        }
+    }
+}
+
+@mixin pagination-size ($name, $multipler) {
+    &[ui-pagination--size="#{$name}"] {
+        ul {
+            li {
+                [ui-pagination-number] {
+                    font-size: $base-font-size + $multipler;
+                }
+            }
+        }
+    }
+}
+
+[ui-pagination] {
+    ul {
+        li {
+            display: inline-block;
+            user-select: none;
+
+            [ui-pagination-number] {
+                background-color: $color-default;
+                border-radius: $default-border-radius;
+                cursor: pointer;
+                display: inline-block;
+                height: $btn-default-height;
+                line-height: $btn-default-line-height;
+                padding-bottom: calc(.5em - 1px);
+                padding-left: 1em;
+                padding-right: 1em;
+                padding-top: calc(.5em - 1px);
+                margin-right: 5px;
+                text-align: center;
+            }
+
+            &.current,
+            &:not(.ellipsis):hover {
+                [ui-pagination-number] {
+                    background-color: $color-primary;
+                    color: #fff;
+                }
+            }
+
+            &.ellipsis {
+                [ui-pagination-number] {
+                    cursor: unset;
+                    background-color: lighten($color-default, $btn-hover-lighten);
+                    color: lighten($base-text-color, $btn-hover-lighten);
+                }
+            }
+        }
+    }
+
+    // Modifiers 
+    @include pagination-rounded();   //@if-use-mod:ui-pagination--style-rounded
+
+    // Sizes
+    @include pagination-size('small', $btn-sm-multiplier);       //@if-use-mod:ui-pagination--size-small
+    @include pagination-size('medium', $btn-md-multiplier);      //@if-use-mod:ui-pagination--size-medium
+    @include pagination-size('large', $btn-lg-multiplier);       //@if-use-mod:ui-pagination--size-large
+}
