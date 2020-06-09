@@ -1,3 +1,14 @@
 Page('auth-page', {
-    template: '@'
+    template: '@',
+    data() {
+        return {
+            urlPage: null
+        }
+    },
+    mounted() {
+        
+    },
+    methods: {
+        
+    }
 });

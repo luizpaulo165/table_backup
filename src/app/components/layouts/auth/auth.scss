@@ -8,7 +8,7 @@
     flex-direction:row;
     
     @include mq('md'){
-        flex-direction: row;
+        flex-direction: column;
     }
     @include mq('sm'){
         flex-direction: column;
@@ -26,7 +26,7 @@
 
         &[web]{
             @include mq('md'){
-                width:50vw;
+                display:none;
             }
             @include mq('sm'){
                 display:none;
@@ -37,17 +37,25 @@
         }
 
         &[mobile]{
-            display:none!important;
+            display:none;
 
+            @include mq('md'){
+                width:100vw;
+                display:flex;
+                flex-direction:column;
+                padding:30px;
+            }
             @include mq('sm'){
                 width:100vw;
                 display:flex;
                 flex-direction:column;
+                padding:30px;
             }
             @include mq('xs'){
                 width:100vw;
                 display:flex;
                 flex-direction:column;
+                padding:30px 10px;
             }
         }
 
@@ -57,8 +65,9 @@
 
         [content]{
             max-width:446px;
-            min-height:530px;
+            // max-height:530px;
             margin:0 auto;
+            overflow:hidden;
         }
     }
     [banner-auth]{
@@ -66,27 +75,48 @@
         background-position:top left;
         background-repeat: no-repeat;
         background-size:cover;
+        background-color:#C4C4C4;
         width:55vw;
         display:flex;
         align-items: center;
         justify-content: flex-start;
         padding:60px;
+        position: relative;
         box-sizing: border-box;
 
         @include mq('md'){
-            width:50vw;
+            background-image:url('../images/auth/banner_mobile.png');
+            background-position:top right;
+            width:100vw;
+            min-height:320px;
+            align-items: flex-end;
+            padding:30px;
         }
         @include mq('sm'){
-            background-image:url('../images/auth/banner_mobile.jpg');
+            background-image:url('../images/auth/banner_mobile.png');
             background-position:top right;
             width:100vw;
-            height:338px;
+            min-height:320px;
+            align-items: flex-end;
+            padding:30px;
         }
         @include mq('xs'){
-            background-image:url('../images/auth/banner_mobile.jpg');
+            background-image:url('../images/auth/banner_mobile.png');
             background-position:top right;
             width:100vw;
-            height:338px;
+            min-height:320px;
+            align-items: flex-end;
+            padding:30px;
+        }
+
+        [content-banner-auth]{
+            @include mq('xs'){
+                height: 100%;
+                display:flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: column;
+            }
         }
 
         h3{
@@ -95,12 +125,56 @@
             line-height: 55px;
             color: #FFFFFF;
             margin-bottom:20px;
+
+            @include mq('md'){
+                font-size:37px;
+                line-height:45px;
+            }
+            @include mq('sm'){
+                font-size:36px;
+                line-height:42px;
+                width:75%;
+            }
+            @include mq('xs'){
+                font-size:36px;
+                line-height:42px;
+                width:75%;
+            }
         }
         h4{
             font-size: 25px;
             line-height: 30px;
             color: #FFFFFF;
             width:70%;
+
+            @include mq('md'){
+                font-size:37px;
+                line-height:45px;
+            }
+            @include mq('sm'){
+                display:none;
+            }
+            @include mq('xs'){
+                display:none;
+            }
+        }
+
+        .back-page{
+            display:none;
+            position:relative;
+            margin-bottom:50px;
+            top:0;
+            left:2px;
+
+            @include mq('md'){
+                display:block;
+            }
+            @include mq('sm'){
+                display:block;
+            }
+            @include mq('xs'){
+                display:block;
+            }
         }
     }
 }

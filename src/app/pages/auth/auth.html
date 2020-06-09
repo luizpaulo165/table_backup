@@ -1,5 +1,65 @@
 <layout-auth>
-    <div slot="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, officiis illum. Eaque voluptatum ratione ea, aperiam reiciendis quos. Asperiores dignissimos pariatur vitae perferendis aliquam, facere itaque quis non adipisci? Vero.
+    <div login-page slot="content">
+        <div index-login v-if="$route.name == 'login'">
+            <div wrap-login-buttons>
+                <h4>Como você deseja entrar?</h4>
+                <router-link to="/entrar" class="btn outline black">Entrar com minha conta</router-link>
+                <button class="btn outline blue">
+                    <img src="../images/icons/facebook.svg" alt="Facebook">
+                    Entrar com facebook
+                </button>
+            </div>
+            <div wrap-create-buttons>
+                <h4>Ainda não tem conta?</h4>
+                <h5>Crie agora, é bem rápido :D</h5>
+                <router-link to="/criar-conta" class="btn outline orange">Criar minha conta</router-link>
+            </div>
+        </div>
+        <div index-create page-black v-if="$route.name == 'enter'">
+            <div header>
+                <router-link to="/login" class="back-page white">
+                    <img src="../images/icons/arrow_left_white.svg" alt="Voltar para Login">
+                </router-link>
+                <h4>Olá!</h4>
+                <p>Preencha com os dados da sua conta para continuar</p>
+            </div>
+            <div form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <input type="text" name="email" id="email-login">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <div class="input-group">
+                        <input type="password" name="password" id="password-login">
+                        <i><img src="../images/icons/see.svg"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button>
+                        <i><img src="../images/icons/locker.svg"></i> esqueceu a senha?
+                    </button>
+                </div>
+            </div>
+            <div footer>
+                <button class="btn orange">Continuar</button>
+            </div>
+        </div>
+        <div index-create page-black v-if="$route.name == 'create'">
+            <div header>
+                <router-link to="/login" class="back-page white">
+                    <img src="../images/icons/arrow_left_white.svg" alt="Voltar para Login">
+                </router-link>
+                <h4>Complete com os seus dados</h4>
+            </div>
+            <div form>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, consectetur. Commodi sed delectus eveniet, magnam cum possimus ea dolorum optio reprehenderit, fuga quae a perspiciatis accusamus voluptas error odit corporis in. Eius, nesciunt? Cupiditate repellat quis vel perferendis dicta, molestias, porro quisquam, est quos laudantium aliquam minima reprehenderit in nisi pariatur nemo dolore possimus atque voluptates expedita iste? Quasi est temporibus obcaecati vero voluptatibus voluptas, illo modi hic laboriosam voluptates ducimus consectetur maiores sequi accusamus soluta tempore nemo fugit nostrum harum exercitationem neque sint magnam! Hic officiis distinctio consequuntur aliquam nobis, vel nesciunt suscipit tenetur in, nulla impedit et. Quidem accusamus fugiat iure libero vitae illum provident expedita distinctio rerum, nesciunt perferendis voluptates fugit facilis perspiciatis et a! Corporis neque delectus in vero dolorem iusto, est modi, ab laboriosam distinctio qui adipisci quod at assumenda cupiditate nostrum perferendis itaque, inventore repellendus obcaecati fugit. Ad, rem incidunt amet asperiores iusto pariatur id dicta voluptate minus, facilis aspernatur illum optio molestiae commodi nemo unde reprehenderit quo aliquid temporibus ipsum placeat. Dignissimos expedita aliquam iure officiis rerum ullam placeat velit eum vero id dolorem itaque voluptatum nemo incidunt ea suscipit deserunt in earum consectetur, iusto labore esse, odit magnam? Amet voluptates nam sint.
+            </div>
+            <div footer>
+                <button class="btn orange">Continuar</button>
+            </div>
+        </div>
     </div>
 </layout-auth>

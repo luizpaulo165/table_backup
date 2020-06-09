@@ -6,6 +6,9 @@
 // });
 
 Router.set('/', 'home');
-Router.set('/login', 'auth-page');
+// AUTH
+Router.set('/login', 'auth-page',  { name: 'login' });
+Router.set('/criar-conta', 'auth-page',  { name: 'create' });
+Router.set('/entrar', 'auth-page',  { name: 'enter' });
 
 Router.set('*', '404');

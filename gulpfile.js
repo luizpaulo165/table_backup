@@ -90,6 +90,7 @@ gulp.task('watch', () => {
 gulp.task('connect', () => {
     connect.server({
         root: 'public',
+        host: '192.168.0.5',
         port: 3000,
         livereload: true,
         fallback: 'public/index.html'
